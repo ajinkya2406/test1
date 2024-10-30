@@ -1,0 +1,19 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest  # Replace with your preferred runner environment
+    steps:
+      - uses: actions/checkout@v3  # Fetches code from repository
+      - name: Set up Python (replace with your language's setup command)
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'  # Specify your desired Python version
+      - name: Run tests (replace with your testing command)
+        run: python -m unittest  # Example unittest command (modify for your specific tests)
+      - name: Build (replace with your build command)
+        run: make build  # Example build command (modify for your build process)
